@@ -16,11 +16,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: yarn
+      - run: yarn install --frozen-lockfile
       - run: yarn run build
       - uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
         with:
-          pin-name: "jett-test"
+          pin-name: "test"
           path: "./out"
           pinata-api-key: ${{ secrets.PINATA_API_KEY }}
           pinata-secret-api-key: ${{ secrets.PINATA_API_SECRET }}
