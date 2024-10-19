@@ -24,5 +24,5 @@ jobs:
           service: pinata
           pinataKey: ${{ secrets.PINATA_API_KEY }}
           pinataSecret: ${{ secrets.PINATA_API_SECRET }}
-          pin: true
-          pinName: "test"
+          # pin: true
+          # pinName: "test"
