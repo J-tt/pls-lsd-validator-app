@@ -1,4 +1,4 @@
-name: Create and publish a Docker image
+name: Create and publish IPFS Build
 
 on:
   push:
@@ -18,11 +18,11 @@ jobs:
           node-version: 18
       - run: yarn install --frozen-lockfile
       - run: yarn run build
-      - uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
+      - uses: aquiladev/ipfs-action@master
         with:
-          pin-name: "test"
-          path: "./out"
-          pinata-api-key: ${{ secrets.PINATA_API_KEY }}
-          pinata-secret-api-key: ${{ secrets.PINATA_API_SECRET }}
-          verbose: true
-          remove-old: true
+          path: ./out
+          service: pinata
+          pinataKey: ${{ secrets.PINATA_API_KEY }}
+          pinataSecret: ${{ secrets.PINATA_API_SECRET }}
+          pin: true
+          pinName: "test"
