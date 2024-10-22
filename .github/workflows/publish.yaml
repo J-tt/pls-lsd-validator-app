@@ -18,11 +18,12 @@ jobs:
           node-version: 18
       - run: yarn install --frozen-lockfile
       - run: yarn run build
-      - uses: aquiladev/ipfs-action@master
+      - run: curl -fsSL https://cli.pinata.cloud/install | bash
+      - uses: aquiladev/ipfs-action@v0.1.3
         with:
           path: ./out
           service: pinata
           pinataKey: ${{ secrets.PINATA_API_KEY }}
           pinataSecret: ${{ secrets.PINATA_API_SECRET }}
           # pin: true
-          # pinName: "test"
+          pinName: "test"
