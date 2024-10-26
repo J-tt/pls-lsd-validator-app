@@ -23,7 +23,7 @@ jobs:
         uses: alexanderschau/ipfs-pinning-action@v1.0.0
         with:
           path_to_add: "./out" #Required
-          endpoint: orange-causal-thrush-316.mypinata.cloud #Required
+          endpoint: https://orange-causal-thrush-316.mypinata.cloud #Required
           access_token: ${{ secrets.PINATA_API_KEY }} #Required
           pin_name: "github-actions-test" #Optional
       # - run: curl -fsSL https://cli.pinata.cloud/install | bash
